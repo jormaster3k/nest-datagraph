@@ -17,17 +17,23 @@ function targetGauge() {
     var obj = JSON.parse(jsonData);
 
     if (obj.rows[0].c[0].v < 50) {
-    	var options = {
-    	    redFrom: 50, redTo: 60,
-    	    yellowFrom:40, yellowTo: 50,
-    	    minorTicks: 1, max: 60
+	    var options = {
+	    minorTicks: 9,
+	    max: 60
     	};
     }
     else {
        var options = {
-           redFrom: 122, redTo: 140,
-           yellowFrom:104, yellowTo: 122,
-           minorTicks: 1, max: 140,
+	   majorTicks: [40,,50,,60,,70,,80,,90,,100],
+           minorTicks: 5,
+	   min: 40,
+	   max: 100,
+	   greenFrom: 77,
+	   greenTo: 100,
+	   greenColor: "#ffb347",
+	   yellowFrom: 40,
+	   yellowTo: 59,
+	   yellowColor: "#b5d3e7"
        };
     }
 
@@ -50,16 +56,22 @@ function intGauge() {
 
     if (obj.rows[0].c[0].v < 50) {
     	var options = {
-    	    redFrom: 50, redTo: 60,
-    	    yellowFrom:40, yellowTo: 50,
-    	    minorTicks: 1, max: 60
+    	    minorTicks: 1,
+            max: 60
     	};
     }
     else {
        var options = {
-           redFrom: 122, redTo: 140,
-           yellowFrom:104, yellowTo: 122,
-           minorTicks: 1, max: 140,
+	   majorTicks: [40,,50,,60,,70,,80,,90,,100],
+	   minorTicks: 5,
+	   min: 40,
+	   max: 100,
+	   greenFrom: 77,
+	   greenTo: 100,
+	   greenColor: "#ffb347",
+	   yellowFrom: 40,
+	   yellowTo: 59,
+	   yellowColor: "#b5d3e7"
        };
     }
 
@@ -82,16 +94,24 @@ function extGauge() {
 
     if (obj.rows[0].c[0].v < 50) {
     	var options = {
-    	    redFrom: 45, redTo: 50,
-    	    yellowFrom:40, yellowTo: 45,
-    	    minorTicks: 1, min: -30, max: 50
+	   majorTicks: [-20,,"0",,20,,40,,60,,80,,100],
+	   minorTicks: 9, 
+	   min: -22,
+	   max: 100,
+	   yellowFrom: -22,
+	   yellowTo: 32,
+	   yellowColor: "#b5d3e7"
     	};
     }
     else {
        var options = {
-           redFrom: 113, redTo: 122,
-           yellowFrom:104, yellowTo: 113,
-           minorTicks: 1, min: -22, max: 122
+	   majorTicks: [-20,,"0",,20,,40,,60,,80,,100],
+	   minorTicks: 9, 
+	   min: -22,
+	   max: 100,
+	   yellowFrom: -22,
+	   yellowTo: 32,
+	   yellowColor: "#b5d3e7"
        };
     }
 

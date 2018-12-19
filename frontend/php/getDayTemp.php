@@ -10,7 +10,7 @@ $sql_array = array("cols" => array(array("label"=>"Date", "type"=>"datetime"),ar
                                    array("label"=>"Interior","type"=>"number"), array("label"=>"Exterior","type"=>"number")));
 while($row =mysqli_fetch_assoc($result))
 {
-    $phpdate = strtotime($row['date']);
+    $phpdate = strtotime($row['date'].' UTC');
     $date_array = "Date(".date('Y', $phpdate).",".(date('n', $phpdate)-1).",".date('d', $phpdate).",".date('H', $phpdate).",".date('i', $phpdate).")";
     $sql_array["rows"][] = array("c" => array(array("v" => $date_array), array("v" => $row["nest_targ_temp"]), 
                                               array("v" => $row["nest_curr_temp"]),array("v" => $row["city_curr_temp"])));
